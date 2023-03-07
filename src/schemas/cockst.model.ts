@@ -4,4 +4,5 @@ import { Column, Model, Table } from 'sequelize-typescript';
 export class Cockts extends Model {
   @Column
   cocktName: string;
+  description: string
 }
