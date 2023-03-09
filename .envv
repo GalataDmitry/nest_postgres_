@@ -1,1 +1,4 @@
 PORT=3041
+USER_NAME=dmitriygalata
+PASSWORD=root
+DATA_BASE=cockts_base

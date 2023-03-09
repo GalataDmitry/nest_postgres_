@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { MainModule } from './main.module';
-import sequelize from '@nestjs/sequelize';
 
 async function runner() {
   const app = await NestFactory.create(MainModule);

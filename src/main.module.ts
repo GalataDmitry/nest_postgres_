@@ -13,9 +13,9 @@ import { ConfigModule } from '@nestjs/config';
       dialect: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'dmitriygalata',
-      password: 'root',
-      database: 'cockts_base',
+      username: process.env.USER_NAME,
+      password: process.env.PASSWORD,
+      database: process.env.DATA_BASE,
       models: [Cockts],
       autoLoadModels: true
     }),
