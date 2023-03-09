@@ -14,6 +14,6 @@ export class CocktsService {
     return this.CocktsModel.findAll();
   };
   addCocktail = () => {
-    return this.CocktsModel.create({cocktName: 'test#2'})
+    return this.CocktsModel.create({cocktName: 'test#2', description: 'hello bitches'}) //, description: 'hello bitches'
   }
 }

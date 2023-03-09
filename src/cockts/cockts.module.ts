@@ -3,10 +3,17 @@ import { CocktsController } from './cockts.controller';
 import { CocktsService } from './cockts.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Cockts } from '../schemas/cockst.model';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [SequelizeModule.forFeature([Cockts])],
+  imports: [
+    SequelizeModule.forFeature([Cockts]),
+    // ConfigModule.forRoot({
+    //   envFilePath: '../env',
+    // }),
+  ],
   controllers: [CocktsController],
-  providers: [CocktsService]
+  providers: [CocktsService],
 })
-export class CocktsModule {}
+export class CocktsModule {
+}

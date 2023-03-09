@@ -2,9 +2,13 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { CocktsModule } from './cockts/cockts.module';
 import { Cockts } from './schemas/cockst.model';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.envv'
+    }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
       host: 'localhost',
