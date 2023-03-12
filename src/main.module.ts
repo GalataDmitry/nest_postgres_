@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { CocktsModule } from './cockts/cockts.module';
 import { Cockts } from './schemas/cockst.model';
+import {Descs} from './schemas/descs.model'
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -16,7 +17,7 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.USER_NAME,
       password: process.env.PASSWORD,
       database: process.env.DATA_BASE,
-      models: [Cockts],
+      models: [Cockts, Descs],
       autoLoadModels: true
     }),
     CocktsModule,

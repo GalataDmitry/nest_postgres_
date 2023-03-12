@@ -1,9 +1,13 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import { Column, HasOne, Model, Table } from 'sequelize-typescript';
+import {Descs} from './descs.model';
 
 @Table
 export class Cockts extends Model {
+
   @Column
-  cocktName: string;
-  @Column
-  description: string
+  cockt_name: string;
+
+  @HasOne(() => Descs, "cockt_id")
+  descs: Descs
 }
+
