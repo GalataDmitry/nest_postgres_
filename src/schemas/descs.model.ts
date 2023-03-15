@@ -1,5 +1,5 @@
 import { BelongsTo, Column, ForeignKey, Model, Table } from 'sequelize-typescript';
-import { Cockts } from './cockst.model';
+import { Cockts } from './cockts.model';
 
 @Table
 export class Descs extends Model {

@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { CocktsModule } from './cockts/cockts.module';
-import { Cockts } from './schemas/cockst.model';
+import { Cockts } from './schemas/cockts.model';
 import {Descs} from './schemas/descs.model'
 import { ConfigModule } from '@nestjs/config';
+import { Ings } from './schemas/ings.model';
+import { Cockts_ings } from './schemas/cockts_ings.model';
 
 @Module({
   imports: [
@@ -17,12 +19,10 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.USER_NAME,
       password: process.env.PASSWORD,
       database: process.env.DATA_BASE,
-      models: [Cockts, Descs],
+      models: [Cockts, Descs, Ings, Cockts_ings],
       autoLoadModels: true
     }),
     CocktsModule,
-  ],
-  // controllers: [],
-  // providers: [],
+  ]
 })
 export class MainModule {}

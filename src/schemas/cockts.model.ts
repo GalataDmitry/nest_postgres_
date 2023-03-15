@@ -7,7 +7,7 @@ export class Cockts extends Model {
   @Column
   cockt_name: string;
 
-  @HasOne(() => Descs, "cockt_id")
+  @HasOne(() => Descs)
   descs: Descs
 }
 
