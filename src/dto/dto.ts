@@ -2,6 +2,7 @@ export interface CocktsDto {
   cockt_name: string
   desc: string
   ing_name: string
+  ing_volume: string | number
 }
 
 export interface DescsDto {

@@ -16,9 +16,10 @@ export class CocktsController {
     const {
       cockt_name,
       desc,
-      ing_name
+      ing_name,
+      ing_volume
     } = addCocktDto;
-    return this.CocktsService.addCocktail({cockt_name, desc, ing_name})
+    return this.CocktsService.addCocktail({cockt_name, desc, ing_name, ing_volume})
   }
 
   @Post('/add_desc')

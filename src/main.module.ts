@@ -5,7 +5,8 @@ import { Cockts } from './schemas/cockts.model';
 import {Descs} from './schemas/descs.model'
 import { ConfigModule } from '@nestjs/config';
 import { Ings } from './schemas/ings.model';
-import { Cockts_ings } from './schemas/cockts_ings.model';
+import { Cockts_ings_volumes } from './schemas/cockts_ings_volumes.model';
+import { Volumes } from './schemas/volumes.model';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { Cockts_ings } from './schemas/cockts_ings.model';
       username: process.env.USER_NAME,
       password: process.env.PASSWORD,
       database: process.env.DATA_BASE,
-      models: [Cockts, Descs, Ings, Cockts_ings],
+      models: [Cockts, Descs, Ings, Cockts_ings_volumes, Volumes],
       autoLoadModels: true
     }),
     CocktsModule,
