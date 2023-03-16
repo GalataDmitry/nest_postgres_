@@ -25,7 +25,7 @@ export class CocktsService {
 
   getAllCocktails() {
     return this.CocktsModel.findAll({
-      include: Descs,
+      include: [Descs, { model: Ings, include: [Volumes] }],
     });
   };
 
@@ -52,7 +52,6 @@ export class CocktsService {
 
         const checkForExistIngredient = await this.IngsModel.findOne({ where: { ing_name: ing_name[i] } });
         const checkForExistVolume = await this.VolumesModel.findOne({ where: { ing_volume: ing_volume[i] } });
-
 
         if (checkForExistIngredient) {
           if (checkForExistVolume) {
@@ -94,8 +93,8 @@ export class CocktsService {
           });
         }
       }
-    }
-    return { newCockt, newIngredient };
+    } else return 'Add ingredients';
+    return { newCockt, newIngredient, newVolume };
   }
 
   addDescription(desc: string) {
