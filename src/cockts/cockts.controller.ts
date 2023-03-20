@@ -22,15 +22,15 @@ export class CocktsController {
     return this.CocktsService.addCocktail({cockt_name, desc, ing_name, ing_volume})
   }
 
-  @Post('/add_desc')
-  addDescription(@Body() addDescDto: DescsDto) {
-    const {desc} = addDescDto
-    return this.CocktsService.addDescription(desc)
+  @Post('/update_desc')
+  updateDescription(@Body() updateDescDto: DescsDto) {
+    const {desc, cockt_id} = updateDescDto
+    return this.CocktsService.updateDescription({desc, cockt_id})
   }
 
-  @Post('/add_ingredient')
+  @Post('/add_ingredient_and_volume')
   addIngredient(@Body() addIngDto: IngsDto) {
-    const {ing_name} = addIngDto
-    return this.CocktsService.addIngredient(ing_name)
+    const {ing_name, cockt_id, ing_volume} = addIngDto
+    return this.CocktsService.addIngredientAndVolume({ ing_name, cockt_id, ing_volume })
   }
 }
